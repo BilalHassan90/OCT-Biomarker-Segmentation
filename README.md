@@ -28,8 +28,9 @@ We provide separate main files for four operations, including preprocessing, net
 
 <p align="justify">
 <b>Data Preprocessing </b>
-  1.	Put the raw OCT scans data in the “…\Raw Scans” folder and pixel-wise ground truth annotations in the “…\Ground Truth Labels” folder. The label IDs corresponding to each class pixel are provided in the “Classes_ID.mat” file.
-  2.	To preprocess the scans, use the “Preprocessor.m” file. The scans containing VMT CRBM are preprocessed differently. Please select the option “Yes” if the candidate OCT scan has the VMT CRBM and “No” otherwise. The preprocessed scans are stored in the “…\Preprocessed” folder. The values of preprocessing parameters are empirically adjusted, generating adequate results in most cases. 
+
+1) Put the raw OCT scans data in the “…\Raw Scans” folder and pixel-wise ground truth annotations in the “…\Ground Truth Labels” folder. The label IDs corresponding to each class pixel are provided in the “Classes_ID.mat” file.
+2) To preprocess the scans, use the “Preprocessor.m” file. The scans containing VMT CRBM are preprocessed differently. Please select the option “Yes” if the candidate OCT scan has the VMT CRBM and “No” otherwise. The preprocessed scans are stored in the “…\Preprocessed” folder. The values of preprocessing parameters are empirically adjusted, generating adequate results in most cases. 
 
 <b>Network Training and Validation </b>
   3.	The network requires the preprocessed scans for training as stored in the “…\Preprocessed” folder in the previous step.
