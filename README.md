@@ -28,7 +28,33 @@ We provide separate main files for four operations, including preprocessing, net
 
 <p align="justify">
 <b>Data Preprocessing </b>
-1.	Put the raw OCT scans data in the “…\Raw Scans” folder and pixel-wise ground truth annotations in the “…\Ground Truth Labels” folder. The label IDs corresponding to each class pixel are provided in the “Classes_ID.mat” file.
-2.	To preprocess the scans, use the “Preprocessor.m” file. The scans containing VMT CRBM are preprocessed differently. Please select the option “Yes” if the candidate OCT scan has the VMT CRBM and “No” otherwise. The preprocessed scans are stored in the “…\Preprocessed” folder. The values of preprocessing parameters are empirically adjusted, generating adequate results in most cases. 
+  1.	Put the raw OCT scans data in the “…\Raw Scans” folder and pixel-wise ground truth annotations in the “…\Ground Truth Labels” folder. The label IDs corresponding to each class pixel are provided in the “Classes_ID.mat” file.
+  2.	To preprocess the scans, use the “Preprocessor.m” file. The scans containing VMT CRBM are preprocessed differently. Please select the option “Yes” if the candidate OCT scan has the VMT CRBM and “No” otherwise. The preprocessed scans are stored in the “…\Preprocessed” folder. The values of preprocessing parameters are empirically adjusted, generating adequate results in most cases. 
+
+<b>Network Training and Validation </b>
+  3.	The network requires the preprocessed scans for training as stored in the “…\Preprocessed” folder in the previous step.
+  4.	To train the network from scratch, use the “Trainingcode.m” file and specify the training hyper-parameters. The data is split in the ratio of 60:20:20 for the train, validate, and test subsets. The IDs of each relevant subset are stored in the “Idx.mat” file. 
+  5.	Once the network training is completed, the trained instances are saved as a “TrainedNet.mat” file. While the predicted labels are stored in the “…\Predicted Labels” folder.
+  
+<b>Data Postprocessing </b>
+  6.  In the next step, the network predicted results are cleaned using the postprocessing scheme. For this purpose, use the “Postprocessing.m” file.
+  7.  This step requires the predicted scans for postprocessing stored in the “…\Predicted Labels” folder in the previous step.
+  8.  The final postprocessed scans are stored in the “…\PostProcessed” folder. 
+
+<b>CRBMs Quantification </b>
+  9.  The quantification of CRBMs can be performed at the B-scan level or the eye level using OCT volumes.
+  10. This step requires the postprocessed scans stored in the “...\OCT Volumes\1\Postprocessed” folder, generated using the postprocessing scheme. Put the corresponding ground truth labels in the “...\OCT Volumes\1\Ground Truth Labels” folder.
+  11. Run the “Quantification.m” file for CRBMs quantification. This step also generates the 3D macular profile of the candidate OCT volume along with the quantification results and saves them in the “...\OCT Volumes\1\3DQuantification” folder.
+</p>
+
+## Results
+We have provided the results of 20 sample OCT scans in the “...\Other” directory.
+
+## Contact
+If you have any query, please feel free to contact us at bilalhassan@buaa.edu.cn 
+
+	
+
+
 
   
