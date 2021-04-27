@@ -33,6 +33,7 @@ We provide separate main files for four operations, including preprocessing, net
 2) To preprocess the scans, use the “Preprocessor.m” file. The scans containing VMT CRBM are preprocessed differently. Please select the option “Yes” if the candidate OCT scan has the VMT CRBM and “No” otherwise. The preprocessed scans are stored in the “…\Preprocessed” folder. The values of preprocessing parameters are empirically adjusted, generating adequate results in most cases. 
 
 <b>Network Training and Validation </b>
+
   3.	The network requires the preprocessed scans for training as stored in the “…\Preprocessed” folder in the previous step.
   4.	To train the network from scratch, use the “Trainingcode.m” file and specify the training hyper-parameters. The data is split in the ratio of 60:20:20 for the train, validate, and test subsets. The IDs of each relevant subset are stored in the “Idx.mat” file. 
   5.	Once the network training is completed, the trained instances are saved as a “TrainedNet.mat” file. While the predicted labels are stored in the “…\Predicted Labels” folder.
