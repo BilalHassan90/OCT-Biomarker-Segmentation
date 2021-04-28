@@ -1,0 +1,1 @@
+The network predicted scans will be stored in this directory.
